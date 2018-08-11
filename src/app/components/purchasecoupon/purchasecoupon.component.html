@@ -1,0 +1,15 @@
+<form class="form-horizontal" style="margin-left: 20px">
+    <div class="form-group">
+        <label for="Coupontitle" class="control-label col-sm-2">Coupon title</label>
+        <div class="col-sm-6">
+            <input class="form-control" placeholder="Insert The title of the coupon you would like to purchase" [(ngModel)] = "coupontopurchase"
+                    type="text" name="CouponTitle" />
+        </div>
+
+        <hr>
+      <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+               <button (click)= "purchaseCoupon()" type="submit" class="btn btn-primary btn-lg">Purchase <span class="glyphicon glyphicon-floppy-remove"></span></button>
+                </div>
+          </div>
+    

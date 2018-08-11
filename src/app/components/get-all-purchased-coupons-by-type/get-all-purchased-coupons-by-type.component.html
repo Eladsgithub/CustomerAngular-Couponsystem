@@ -1,0 +1,52 @@
+
+
+
+
+  <head>
+    <meta charset="UTF-8">
+    <title>All purchased Coupons by type </title>
+  </head>
+  <body>
+    <select (change)="onChange($event.target.value)">
+      <option *ngFor="let o of options">{{o}}</option>
+  </select>
+  
+    <section>
+    <h1> displaying all your coupons by type</h1>
+   
+      <table style="margin-left: 10px" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Amount</th>
+            <th>Message</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Price</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+      </table>
+   
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr *ngFor= "let c of couponsbytype">
+            <td>{{c.type}}</td>
+            <td>{{c.id}}</td>
+            <td>{{c.title}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.startDate | date : "dd/MM/yyyy"}}</td>
+            <td>{{c.endDate | date : "dd/MM/yyyy"}}</td>
+            <td>{{c.message}}</td>
+            <td>{{c.price | currency : 'ILS'}}</td>
+            <td><img src ="{{c.image}}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  </body>

@@ -1,0 +1,53 @@
+
+
+
+
+    <head>
+      <meta charset="UTF-8">
+      <title>All purchased Coupons by price </title>
+    </head>
+    <body>
+    <form class="container" ng-controller="MainCtrl">
+      <div class="form-group">
+          <label for="price"> Price</label>   
+          <input class="form-control" placeholder="price" [(ngModel)]=price name="price" type="number" id="price" required=""/>             
+      </div>
+      <div class="form-group">
+    <button (click) = "getAllPurchasedCouponsByPrice()" type="submit" > Get Coupons </button>
+    </div>
+    <body>
+      <section>
+      <h1> displaying all your coupons by price</h1>
+     
+        <table style="margin-left: 10px" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Price</th>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Amount</th>
+              <th>Message</th>
+              <th>Type</th>
+              <th>Start date</th>
+              <th>End date</th>
+              <th>Image</th>
+            </tr>
+            <tr *ngFor= "let c of couponsbytype">
+              <td>{{c.price | currency : 'ILS'}}</td>
+              <td>{{c.id}}</td>
+              <td>{{c.title}}</td>
+              <td>{{c.amount}}</td>
+              <td>{{c.message}}</td>
+              <td>{{c.type}}</td>
+              <td>{{c.startDate | date : "dd/MM/yyyy"}}</td>
+              <td>{{c.endDate | date : "dd/MM/yyyy"}}</td>
+              <td><img src ="{{c.image}}"></td>
+            </tr>
+            </thead>
+          </table>
+        
+     
+    </section>
+    
+    </body>
+   
